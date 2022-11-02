@@ -1,0 +1,731 @@
+---
+output:
+  xaringan::moon_reader:
+    css: [default, "metropolis_ustat.css", "metropolis-fonts", "specifici.css"]
+    lib_dir: immagini
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+    seal: false
+    includes:
+      after_body: insert-logo.html
+---
+
+
+```{r setup, include=FALSE}
+rm(list=ls())
+
+options(htmltools.dir.version = FALSE)
+
+knitr::opts_chunk$set(fig.width=4.25, fig.height=3.5, fig.retina=3,
+                      message=FALSE, warning=FALSE, cache = TRUE, 
+                      autodep = TRUE, hiline=TRUE
+                      , dev = "svg"
+                      )
+
+options(knitr.kable.NA = '')
+source(file = "Figure.R", encoding = "UTF-8")
+
+```
+
+class: title-slide clear
+
+![](immagini/logo_Immagine1_250.png)
+
+
+# **Pédaler dans la choucroute**
+## *...et l’indice des prix à la consommation (IPC)*
+
+<br>
+
+
+### Eric Stephani (Ufficio di statistica)
+### .font80[Journées suisses de la statistique 2022]
+### .font80[**Nouvelles pistes pour la communication II**]
+
+### .mid-warm-grey[.font80[~~*Lucerne, mercredi 26 octobre 2022*~~]]
+### .hl[last updating: 01.11.2022] .font80[(Climat de consommation, enquête octobre 2022, SECO)]
+
+---
+
+# L'indice nationale des prix à la consommation (IPC)
+
+.pull-left[
+
+##### Image, idée de départ
+.img-left[
+![](immagini/pedaler_choucroute.jpg)
+]
+
+.font70[
+.hl[Pédaler dans la choucroute]  
+
+.font60[
+.mid-warm-grey[(Figuré)] *Patauger, perdre ses moyens, perdre le fil de ses gestes, de ses pensées, de ses paroles.* .mid-warm-grey[(Expression populaire)] *Se démener sans avancer.*
+
+]
+]
+]
+
+--
+
+.pull-right[
+##### Sommaire
+.font80[
+.mid-warm-grey[1.] IPC dans le temps  
+.mid-warm-grey[2.] Taux de croissance de l'IPC, par groupe de produits et contribution au renchérissement    
+.mid-warm-grey[3.] Effets et perceptions du renchérissement
+.white[.]  
+.white[.]  
+.white[.]  
+.font60[
+**Link**:  
+- [www.ipc.bfs.admin.ch](https://www.bfs.admin.ch/bfs/fr/home/statistiques/prix/indice-prix-consommation.html) > "Résultats détaillés"  
+- [www.seco.admin.ch](https://www.seco.admin.ch/seco/fr/home.html) > "Situation économique & Politique économique" > "Situation économique" > .hl["Climat de consommation"]  
+- Base: [https://ericsteph.github.io/ipc-choucroute](https://ericsteph.github.io/ipc-choucroute)  
+- Dernière version: [https://ericsteph.github.io/ipc-choucroute-updated](https://ericsteph.github.io/ipc-choucroute-updated)
+
+]
+]
+]
+
+
+---
+class: hide-logo, inverse, center, middle
+
+# .font80[1.] L'IPC dans le temps
+*indice base 100*
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC (2020 = 100), 2015-2022
+
+]
+]
+
+
+.right-column[
+![](immagini/p1.svg)
+
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC (2020 = 100), 2015-2022
+#### IPC (2010 = 100), 2005-2022
+
+]
+]
+
+--
+
+.right-column[
+![](immagini/p2.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC (2020 = 100), 2015-2022
+#### IPC (2010 = 100), 2005-2022
+#### IPC (1987 = 100), 1985-2022
+
+]
+]
+
+--
+
+.right-column[
+![](immagini/p3.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC (2020 = 100), 2015-2022
+#### IPC (2010 = 100), 2005-2022
+#### IPC (1987 = 100), 1985-2022
+#### 1985-1992 vs 2018-2022
+
+]
+]
+
+
+.right-column[
+![](immagini/p4.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC (2020 = 100), 2015-2022
+#### IPC (2010 = 100), 2005-2022
+#### IPC (1987 = 100), 1985-2022
+#### Comparaison, 1985-1992 vs 2018-2022
+#### Comparaison des taux de croissance de l'IPC
+
+]
+]
+
+
+.right-column[
+![](immagini/p5.svg)
+
+]
+
+---
+class: clear
+
+.font60[
+.left-column[
+#### L'evolution actuelle des prix est-elle préoccupante?  
+#### Cette évolution des prix est-elle incontrôlable?  
+#### Cette situation ressemble-t-elle davantage à la période 2007-2010, à la période 1987-1992?  
+#### ...  
+
+]
+]
+
+.img-left[![](immagini/omini_urlano3.png)]
+
+--
+
+<br>
+.right-column[
+Ces questions sont-elles les plus urgentes?
+
+]
+
+--
+
+.right-column[
+.pull-left[
+OUI
+]
+
+.pull-right[
+.hl[NON]
+]
+]
+
+---
+class: hide-logo, inverse, center, middle
+
+# .font80[2.] Le taux de croissance de l'IPC (VAR_m-12)
+*selon le groupe de produits*
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### VAR_m-12, selon le type de produits
+
+]
+]
+
+
+.right-column[
+![](immagini/p2.1.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### VAR_m-12, selon le type de produits
+#### VAR_m-12, selon la provenance des produits
+
+]
+]
+
+
+.right-column[
+![](immagini/p2.2.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### VAR_m-12, selon le type de produits
+#### VAR_m-12, selon la provenance des produits
+#### VAR_m-12, selon les groupes principaux
+
+]
+]
+
+
+.right-column[
+![](immagini/p2.5.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### VAR_m-12, selon le type de produits
+#### VAR_m-12, selon la provenance des produits
+#### VAR_m-12, selon les groupes principaux
+#### VAR_m-12, "core" inflation
+
+]
+]
+
+
+.right-column[
+![](immagini/p2.3.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### VAR_m-12, selon le type de produits
+#### VAR_m-12, selon la provenance des produits
+#### VAR_m-12, selon les groupes principaux
+#### VAR_m-12, "core" inflation
+#### VAR_m-12, Énergie et carburants
+
+]
+]
+
+
+.right-column[
+![](immagini/p2.4.svg)
+
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Première lecture
+
+<br>
+.img-left[![](immagini/omino-trnq3.png)]
+
+]
+]
+
+--
+
+.right-column[
+<br>
+#### L'inflation 2022
+
+.font70[
+- Inflation importée  
+- Inflation déclenchée et soutenue par les prix de l'énergie et des carburants
+
+]
+]
+
+--
+
+.right-column[
+
+#### Mais... si on regarde les poids
+
+.font80[
+- Poids des produits importés: 24,98%
+- Poids de l'énergie et des carburants: 5,47%
+
+]
+]
+
+
+---
+class: hide-logo, inverse, center, middle
+
+# Contribution au renchérissement (CONTR_y)
+*selon le groupe de produits*
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Contribution, selon le type de produits
+
+]
+]
+
+
+.right-column[
+![](immagini/p3.1.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Contribution, selon le type de produits
+#### Contribution, selon la provenance des produits
+
+]
+]
+
+
+.right-column[
+![](immagini/p3.2.svg)
+
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Contribution, selon le type de produits
+#### Contribution, selon la provenance des produits
+#### Contribution et "core" inflation
+
+]
+]
+
+
+.right-column[
+![](immagini/p3.3.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Contribution, selon le type de produit
+#### Contribution, selon la provenance des produits
+#### Contribution et "core" inflation
+#### Contributions "minimales", exemple
+
+]
+]
+
+
+.right-column[
+![](immagini/p3.5.svg)
+]
+
+---
+class: hide-logo, inverse, center, middle
+
+# Le taux de croissance de l'IPC .hl[et] contribution au renchérissement
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Évolution de l'IPC, selon la classe de croissance
+
+]
+]
+
+
+.right-column[
+![](immagini/p4.1.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Évolution de l'IPC, selon la classe de croissance
+#### Niveau 2
+
+]
+]
+
+
+.right-column[
+![](immagini/p4.2.svg)
+
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Évolution de l'IPC, selon la classe de croissance
+#### Niveau 2
+#### Niveau 3, dernières 25
+
+]
+]
+
+
+.right-column[
+![](immagini/p4.3.svg)
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Évolution de l'IPC, selon la classe de croissance
+#### Niveau 2
+#### Niveau 3, derniers 25
+#### Niveau 3, premiers 25
+
+]
+]
+
+
+.right-column[
+![](immagini/p4.4.svg)
+
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### Évolution de l'IPC, selon la classe de croissance
+#### Niveau 2
+#### Niveau 3, derniers 25
+#### Niveau 3, premiers 25
+#### Niveau 4, premiers 25
+
+]
+]
+
+
+.right-column[
+![](immagini/p4.5.svg)
+]
+
+---
+
+class: middle clear
+
+## Suivre l'IPC
+
+.mid-warm-grey[
+.font70[
+*Point de départ*
+
+]
+]
+
+--
+
+.pull-left[
+#### L'IPC, première lecture
+.img.left[![](immagini/omini_urlano3.png)]
+.font70[
+Résultats de plus en plus préoccupants:  
+- Taux de croissance de plus en plus hautes   
+- Situation qui a changée très vite  
+- Similitudes par rapport à des périodes relativement eloignées
+
+]
+]
+
+--
+
+.pull-right[
+#### L'IPC et... "*analyse par déconstruction*"
+.img-left[![](immagini/omino-lente2.png)]
+
+.font70[
+Résultats de plus en plus préoccupants, .hl[mais]:   
+- il y a les taux de croissance et les poids  
+- il y a plusieurs niveaux d'analyse
+
+]
+]
+
+---
+
+class: hide-logo, inverse, center, middle
+
+# .font80[3.] IPC et perceptions de l'évolution des prix
+*enquête sur le climat de consommation (SECO)*
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC et son perception
+
+]
+]
+
+
+.right-column[
+![](immagini/p5.1.svg)
+
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC et son perception
+#### IPC, perceptions et indice de correlation
+
+]
+]
+
+
+.right-column[
+![](immagini/p5.2.svg)
+
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC et son perception
+#### IPC, son perception et correlation
+#### IPC et situation financière
+
+]
+]
+
+
+.right-column[
+![](immagini/p5.3.svg)
+
+]
+
+---
+class: clear
+
+.font70[
+.left-column[
+#### IPC et son perception
+#### IPC, son perception et correlation
+#### IPC et situation financière
+#### IPC et grand acquisition
+
+]
+]
+
+
+.right-column[
+![](immagini/p5.4.svg)
+
+]
+
+
+---
+# Conclusion
+
+.pull-left[
+###### Pedaler dans la choucroute
+<br>
+.img-left[![](immagini/pedaler_choucroute.jpg) ]
+.font60[
+.mid-warm-grey[(Figuré)] *Patauger, perdre ses moyens, perdre le fil de ses gestes, de ses pensées, de ses paroles.* .mid-warm-grey[(Expression populaire)] *Se démener sans avancer.*
+
+]
+]
+
+--
+
+.pull-right[
+
+###### Apprendre à pedaler vers...
+<br>
+.img-left[![](immagini/enfant_velo.jpg) ]
+.font60[
+.mid-warm-grey[(Expression populaire)] *Une fois qu'on a appris à faire du vélo, on ne l'oublie jamais.*
+
+]
+]
+
+
+---
+
+# Corollaire
+
+.pull-left[
+.font70[
+##### Articles, présentations
+- Stephani, E. (2022). *Non solo numeri. Statistica e giornalismo*. [Corso di giornalismo](https://ericsteph.github.io/corsogiornalisti2022)  
+- Stephani, E. (2022). *Il rebus dell'inflazione. È anche una questione di pesi*. [Extra dati, n. 3](https://dfe.news.ti.ch/display.php?L=43&N=660)
+- Stephani, E. (2022). *"Core inflation" e percezioni. IPC e clima di fiducia dei consumatori*. [Dati, n. 2](https://www3.ti.ch/DFE/DR/USTAT/index.php?fuseaction=pubblicazioni.home&t=1&tema=&anno=&collana=3)
+
+]
+]
+
+
+.pull-right[
+
+.font70[
+##### Projets, chantiers
+Finalisation d'un .hl[*paquet R*]. pour:    
+- Automatiser la production complète ou partielle de l'IPC, en *format long* (trois file: d. mensuelles, d. trimestrielles et d. annuelles)  
+- Regroupement de fonctions pour la création de tableaux et figures de base  
+- ...  
+
+]
+]
+
+
+.font60[
+<br>
+<br>
+<br>
+<br>
+<br>
+.mid-warm-grey[
+Slides create con R via: [{r-project}](https://www.r-project.org) e [{xaringan}](https://github.com/yihui/xaringan)
+
+]
+]
+
+---
+
+class: title-slide-fin clear hide-logo
+
+![](immagini/logo_ultima.png)
+
+# .white[.]
+
+.font70[
+.pull-right2[
+
+#### **Contatti**
+Eric Stephani  
+[eric.stephani@ti.ch](mailto:eric.stephani@ti.ch)  
+
+.white[ ]  
+Repubblica e Canton Ticino  
+Divisione delle risorse  
+**Ufficio di statistica**  
+[www.ti.ch/ustat](http://www.ti.ch/ustat)
+
+]
+]
+
